@@ -43,4 +43,8 @@ public class SwerveWrapper extends SubsystemBase {
     public SwerveModuleState[] getModuleStates() {
         return swerve.getStates();
     }
+
+    public void resetOdometry(Pose2d pose) {
+        swerve.resetOdometry(pose);
+    }
 }

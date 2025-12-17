@@ -1,5 +1,7 @@
 package frc.robot.Commands;
 
+import edu.wpi.first.math.geometry.Pose2d;
+import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.PS5Controller;
@@ -22,7 +24,10 @@ public class SwerveDrive extends Command {
   }
 
   @Override
-  public void initialize() {}
+  public void initialize() {
+    Pose2d poseInicial = new Pose2d(1.5, 5.5, Rotation2d.fromDegrees(0));
+    swerve.resetOdometry(poseInicial);
+  }
 
   @Override
   public void execute() {
@@ -35,7 +40,7 @@ public class SwerveDrive extends Command {
     if (Math.abs(x)  < 0.05) x  = 0;
     if (Math.abs(x2)  < 0.05) x2  = 0;
 
-    swerve.drive(new Translation2d(y * maxSpeed, x * maxSpeed), x2 * maxSpeed,true, true);
+    swerve.drive(new Translation2d(x * maxSpeed, y * maxSpeed), x2 * maxSpeed,true, true);
     SmartdashBoard();
   }
 
