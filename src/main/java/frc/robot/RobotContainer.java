@@ -4,7 +4,7 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.PS5Controller;
+import edu.wpi.first.wpilibj.PS4Controller;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import frc.robot.Commands.SwerveDrive;
@@ -13,7 +13,7 @@ import frc.robot.Helper.SwerveWrapper;
 
 public class RobotContainer {
 
-  private final PS5Controller ps5 = new PS5Controller(Constants.PS5_ID);
+  private final PS4Controller ps5 = new PS4Controller(Constants.PS5_ID);
   private final SwerveWrapper swerve = new SwerveWrapper();
 
   public RobotContainer() {
